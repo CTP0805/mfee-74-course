@@ -21,7 +21,16 @@ export default function RenderPage() {
       {null}
       {undefined}
       <h2>陣列array</h2>
+      {[1, 2, 3]}
+      {['a', 'b']}
+      {/* 在陣列中的jsx項目需要key屬性 */}
+      {/* key相當於react中清單項目的id(身份証) */}
+      {[<p key="1">x</p>, <p key="2">y</p>]}
       <h2>物件object</h2>
+      {/* 物件無法直接渲染，會出現程式錯誤 */}
+      {/* {{ a: 1, b: 2 }} */}
+      {/* 可以轉為JSON字串進行渲染 */}
+      {JSON.stringify({ a: 1, b: 2 })}
     </>
   );
 }
