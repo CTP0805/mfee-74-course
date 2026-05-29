@@ -21,6 +21,8 @@ export default function ProductTablePage() {
           </tr>
         </thead>
         <tbody>
+          {/* 常用的map撰寫風格： 英文複數名詞 map 單數名詞 */}
+          {/* 例如: products -> product */}
           {products.map((product) => {
             return (
               <tr key={product.id}>
