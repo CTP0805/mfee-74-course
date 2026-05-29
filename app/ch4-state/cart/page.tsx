@@ -2,6 +2,22 @@
 
 import { useState } from 'react';
 
+// 範例能新增的商品
+const items = [
+  {
+    id: 0,
+    name: '小熊餅乾',
+  },
+  {
+    id: 1,
+    name: '巧克力豆餅乾',
+  },
+  {
+    id: 2,
+    name: '小老板海苔',
+  },
+];
+
 const initialProducts = [
   {
     id: 0,
@@ -101,42 +117,77 @@ export default function ShoppingCart() {
     setProducts(nextProducts);
   }
 
+  // 新增商品到購物車中
+  function handleAdd(item: any) {
+    // 先尋找要加入的項目是否已經在購物車裡
+    const foundIndex = products.findIndex((product) => product.id === item.id);
+
+    if (foundIndex !== -1) {
+      // 如果有在購物車裡 -> 作遞增數量
+      handleIncrease2(item.id);
+    } else {
+      // 如果沒在購物車裡 -> 作新增
+      const newProduct = { ...item, count: 1 };
+      const nextProducts = [newProduct, ...products];
+      setProducts(nextProducts);
+    }
+  }
+
   return (
-    <ul>
-      {products.map((product) => (
-        <li key={product.id}>
-          {product.name} (<b>{product.count}</b>)
-          <button
-            onClick={() => {
-              handleIncrease3(product.id);
-            }}
-          >
-            +
-          </button>
-          <button
-            onClick={() => {
-              if (product.count === 1) {
+    <>
+      <ul>
+        {items.map((item) => {
+          return (
+            <li key={item.id}>
+              {item.name}
+              <button
+                onClick={() => {
+                  handleAdd(item);
+                }}
+              >
+                加入購物車
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+      <hr />
+      <ul>
+        {products.map((product) => (
+          <li key={product.id}>
+            {product.name} (<b>{product.count}</b>)
+            <button
+              onClick={() => {
+                handleIncrease3(product.id);
+              }}
+            >
+              +
+            </button>
+            <button
+              onClick={() => {
+                if (product.count === 1) {
+                  if (confirm('你確定要刪除這個商品嗎？')) {
+                    handleRemove2(product.id);
+                  }
+                } else {
+                  handleDecrease(product.id);
+                }
+              }}
+            >
+              -
+            </button>
+            <button
+              onClick={() => {
                 if (confirm('你確定要刪除這個商品嗎？')) {
                   handleRemove2(product.id);
                 }
-              } else {
-                handleDecrease(product.id);
-              }
-            }}
-          >
-            -
-          </button>
-          <button
-            onClick={() => {
-              if (confirm('你確定要刪除這個商品嗎？')) {
-                handleRemove2(product.id);
-              }
-            }}
-          >
-            x
-          </button>
-        </li>
-      ))}
-    </ul>
+              }}
+            >
+              x
+            </button>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
