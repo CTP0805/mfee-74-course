@@ -1,0 +1,190 @@
+[
+  {
+    "orderId": "ORD-20241215-001",
+    "customerName": "張小明",
+    "customerEmail": "zhangxiaoming@email.com",
+    "customerPhone": "0912-345-678",
+    "orderDate": "2024-12-15",
+    "status": "已出貨",
+    "totalAmount": 15900,
+    "shippingAddress": "台北市信義區信義路五段7號",
+    "paymentMethod": "信用卡",
+    "items": [
+      {
+        "productId": "6e96141a-8663-43fe-a749-34063383b850",
+        "productName": "Awesome Steel Cheese - adidas 長袖上衣",
+        "quantity": 2,
+        "unitPrice": 5300,
+        "subtotal": 10600
+      },
+      {
+        "productId": "82b9b0b2-4965-416d-b184-6303dc683b43",
+        "productName": "Gorgeous Soft Shirt - Nike 慢跑鞋",
+        "quantity": 1,
+        "unitPrice": 8700,
+        "subtotal": 8700
+      }
+    ]
+  },
+  {
+    "orderId": "ORD-20241216-001",
+    "customerName": "李小華",
+    "customerEmail": "lixiaohua@email.com",
+    "customerPhone": "0923-456-789",
+    "orderDate": "2024-12-16",
+    "status": "處理中",
+    "totalAmount": 7400,
+    "shippingAddress": "新北市板橋區文化路一段100號",
+    "paymentMethod": "貨到付款",
+    "items": [
+      {
+        "productId": "d841a14a-9e7b-4557-9f4d-1fd36c8b7f13",
+        "productName": "Rustic Granite Computer - adidas 帽類",
+        "quantity": 1,
+        "unitPrice": 7400,
+        "subtotal": 7400
+      }
+    ]
+  },
+  {
+    "orderId": "ORD-20241217-001",
+    "customerName": "王大明",
+    "customerEmail": "wangdaming@email.com",
+    "customerPhone": "0934-567-890",
+    "orderDate": "2024-12-17",
+    "status": "已送達",
+    "totalAmount": 21000,
+    "shippingAddress": "台中市西區台灣大道二段200號",
+    "paymentMethod": "信用卡",
+    "items": [
+      {
+        "productId": "05cdee5b-4e77-439f-8a86-0ecce2719b0c",
+        "productName": "Luxurious Wooden Car - PUMA 籃球鞋",
+        "quantity": 1,
+        "unitPrice": 14800,
+        "subtotal": 14800
+      },
+      {
+        "productId": "7dc7af31-3497-4d21-bc38-ebc2f9755a48",
+        "productName": "Intelligent Soft Gloves - New Balance 包款",
+        "quantity": 1,
+        "unitPrice": 8900,
+        "subtotal": 8900
+      }
+    ]
+  },
+  {
+    "orderId": "ORD-20241218-001",
+    "customerName": "陳小美",
+    "customerEmail": "chenxiaomei@email.com",
+    "customerPhone": "0945-678-901",
+    "orderDate": "2024-12-18",
+    "status": "已取消",
+    "totalAmount": 12100,
+    "shippingAddress": "高雄市前金區中正路四段300號",
+    "paymentMethod": "信用卡",
+    "items": [
+      {
+        "productId": "da6133ca-dd72-46eb-9bdc-e688a5050abf",
+        "productName": "Tasty Metal Chair - PUMA 帽類",
+        "quantity": 1,
+        "unitPrice": 12100,
+        "subtotal": 12100
+      }
+    ]
+  },
+  {
+    "orderId": "ORD-20241219-001",
+    "customerName": "劉小強",
+    "customerEmail": "liuxiaoqiang@email.com",
+    "customerPhone": "0956-789-012",
+    "orderDate": "2024-12-19",
+    "status": "已出貨",
+    "totalAmount": 17400,
+    "shippingAddress": "桃園市中壢區中正路五段400號",
+    "paymentMethod": "貨到付款",
+    "items": [
+      {
+        "productId": "5ccc2438-f61b-48b0-aec9-a3d2d96b6a4b",
+        "productName": "Practical Steel Keyboard - Nike 長袖上衣",
+        "quantity": 1,
+        "unitPrice": 9300,
+        "subtotal": 9300
+      },
+      {
+        "productId": "5301c325-282b-4b5d-8602-b828eb780d3c",
+        "productName": "Electronic Fresh Ball - New Balance 包款",
+        "quantity": 1,
+        "unitPrice": 8100,
+        "subtotal": 8100
+      }
+    ]
+  },
+  {
+    "orderId": "ORD-20241220-001",
+    "customerName": "黃小芳",
+    "customerEmail": "huangxiaofang@email.com",
+    "customerPhone": "0967-890-123",
+    "orderDate": "2024-12-20",
+    "status": "處理中",
+    "totalAmount": 6800,
+    "shippingAddress": "台南市東區東門路三段500號",
+    "paymentMethod": "信用卡",
+    "items": [
+      {
+        "productId": "6f5ff4bc-6ec5-4d67-b069-6fa2f972ea1d",
+        "productName": "Incredible Rubber Chair - PUMA 短袖上衣",
+        "quantity": 1,
+        "unitPrice": 5200,
+        "subtotal": 5200
+      },
+      {
+        "productId": "be42ba40-2ad5-43b6-8795-8187f4522eaf",
+        "productName": "Incredible Metal Ball - Nike 帽類",
+        "quantity": 1,
+        "unitPrice": 3400,
+        "subtotal": 3400
+      }
+    ]
+  },
+  {
+    "orderId": "ORD-20241221-001",
+    "customerName": "周小偉",
+    "customerEmail": "zhouxiaowei@email.com",
+    "customerPhone": "0978-901-234",
+    "orderDate": "2024-12-21",
+    "status": "已送達",
+    "totalAmount": 10700,
+    "shippingAddress": "新竹市東區光復路二段600號",
+    "paymentMethod": "信用卡",
+    "items": [
+      {
+        "productId": "31238b5b-7043-467c-9e48-e3b0f010a0d3",
+        "productName": "Bespoke Fresh Soap - adidas 慢跑鞋",
+        "quantity": 1,
+        "unitPrice": 10700,
+        "subtotal": 10700
+      }
+    ]
+  },
+  {
+    "orderId": "ORD-20241222-001",
+    "customerName": "吳小玲",
+    "customerEmail": "wuxiaoling@email.com",
+    "customerPhone": "0989-012-345",
+    "orderDate": "2024-12-22",
+    "status": "已出貨",
+    "totalAmount": 16200,
+    "shippingAddress": "基隆市信義區信一路700號",
+    "paymentMethod": "貨到付款",
+    "items": [
+      {
+        "productId": "bc33944c-93e6-4dc8-aae0-776094550652",
+        "productName": "Licensed Frozen Chair - adidas 帽類",
+        "quantity": 2,
+        "unitPrice": 8100,
+        "subtotal": 16200
+      }
+    ]
+  }
+] 
