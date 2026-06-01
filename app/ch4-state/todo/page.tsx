@@ -17,6 +17,12 @@ export default function TodoPage() {
   // 宣告給文字輸入框使用的狀態
   const [inputText, setInputText] = useState('');
 
+  // 處理刪除
+  const onRemove = (todoId: string) => {
+    const nextTodos = todos.filter((todo) => todo.id !== todoId);
+    setTodos(nextTodos);
+  };
+
   return (
     <>
       <h1>待辨事項</h1>
@@ -50,7 +56,20 @@ export default function TodoPage() {
       />
       <ul>
         {todos.map((todo) => {
-          return <li key={todo.id}>{todo.text}</li>;
+          return (
+            <li key={todo.id}>
+              {todo.text}
+              <button
+                onClick={() => {
+                  if (confirm('你確定要刪除這個項目？')) {
+                    onRemove(todo.id);
+                  }
+                }}
+              >
+                x
+              </button>
+            </li>
+          );
         })}
       </ul>
     </>
