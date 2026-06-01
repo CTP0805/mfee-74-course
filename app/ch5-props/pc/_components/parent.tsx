@@ -16,7 +16,7 @@ export default function Parent() {
         aa={[1, 2, 3]}
         oa={{ x: 1, y: 2 }}
         sum={(a, b) => a + b}
-        jsx={<p>hello</p>}
+        jsx={<>hello</>}
       />
     </>
   );
