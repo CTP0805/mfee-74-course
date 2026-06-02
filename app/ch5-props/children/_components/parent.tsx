@@ -1,15 +1,15 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { ReactNode } from 'react';
 
 export interface ParentProps {
-  
+  children?: ReactNode;
 }
 
-export default function Parent({  }: ParentProps) {
+export default function Parent({ children }: ParentProps) {
   return (
     <>
-      <div>Parent</div>
+      <div style={{ color: 'red', fontSize: 30 }}>{children}</div>
     </>
   );
 }

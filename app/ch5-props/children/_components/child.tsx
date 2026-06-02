@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-
-export interface ChildProps {}
-
-export default function Child({}: ChildProps) {
+export default function Child() {
   return (
     <>
-      <div>Child</div>
+      <h3>Child</h3>
+      <ul>
+        <li>第1個項目</li>
+        <li>第2個項目</li>
+      </ul>
     </>
   );
 }
