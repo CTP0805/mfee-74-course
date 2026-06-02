@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+// 導入類型(型別)
+import { Todo } from './_types/todo';
 
 // 範例資料(mock)
 const initData = [
@@ -14,9 +16,17 @@ const initData = [
 
 export default function TodoPage() {
   // 記錄待辨事項的狀態
-  const [todos, setTodos] = useState(initData);
+  const [todos, setTodos] = useState<Todo[]>(initData);
   // 宣告給文字輸入框使用的狀態
   const [inputText, setInputText] = useState('');
+
+  // 處理新增
+  const onAdd = (todo: Todo) => {
+    // 狀態更動第1、2步。加到新狀態的最前面
+    const nextTodos = [todo, ...todos];
+    // 狀態更動第3步
+    setTodos(nextTodos);
+  };
 
   // 處理刪除
   const onRemove = (todoId: string) => {
@@ -56,15 +66,13 @@ export default function TodoPage() {
           // 按下enter鍵而且有輸入文字的情況下
           if (e.key === 'Enter' && inputText.trim()) {
             // 建立新的todo
-            const newTodo = {
+            const newTodo: Todo = {
               id: crypto.randomUUID(), //新項目使用uuid當作id
               text: inputText,
               completed: false,
             };
-            // 狀態更動第1、2步。加到新狀態的最前面
-            const nextTodos = [newTodo, ...todos];
-            // 狀態更動第3步
-            setTodos(nextTodos);
+
+            onAdd(newTodo);
 
             // 清空文字輸入框
             setInputText('');
