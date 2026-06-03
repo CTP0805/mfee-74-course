@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 // 導入類型(型別)
-import { Todo } from './_types/todo';
+import { Todo, FilterStatus } from './_types/todo';
 // 導入子元件
 import AddForm from './_components/add-form';
-
 import List from './_components/list';
+import FilterBar from './_components/filter-bar';
 
 // 範例資料(mock)
 const initData = [
@@ -22,6 +22,8 @@ const initData = [
 export default function TodoPage() {
   // 記錄待辨事項的狀態
   const [todos, setTodos] = useState<Todo[]>(initData);
+  // 定義過濾用的狀態('all'=全部, 'active'=進行中, 'completed'=已完成)
+  const [filterStatus, setFilterStatus] = useState<FilterStatus>('all');
 
   // 處理新增
   const onAdd = (todo: Todo) => {
@@ -83,6 +85,18 @@ export default function TodoPage() {
     setTodos(nextTodos);
   };
 
+  // 依照過濾狀態，返回對應的項目陣列
+  const getFilterTodos = () => {
+    switch (filterStatus) {
+      case 'active':
+        return todos.filter((v) => v.completed === false);
+      case 'completed':
+        return todos.filter((v) => v.completed === true);
+      default: // 相當於'all
+        return todos;
+    }
+  };
+
   return (
     <>
       <h1>待辨事項</h1>
@@ -91,11 +105,18 @@ export default function TodoPage() {
       <AddForm onAdd={onAdd} />
       {/* 列表 */}
       <List
-        todos={todos}
+        // todos={todos}
+        // 依照過濾狀態，返回對應的項目陣列
+        todos={getFilterTodos()}
         onRemove={onRemove}
         onToggleCompleted={onToggleCompleted}
         onEdit={onEdit}
         onSave={onSave}
+      />
+      {/* 過濾目前待辨事項各種狀態的按鈕群組 */}
+      <FilterBar
+        filterStatus={filterStatus}
+        setFilterStatus={setFilterStatus}
       />
     </>
   );

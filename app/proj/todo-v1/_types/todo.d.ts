@@ -5,3 +5,6 @@ export interface Todo {
   completed: boolean; // true代表已完成
   isEditing: boolean; // true代表正在編輯中
 }
+
+// 定義過濾狀態的類型
+export type FilterStatus = 'all' | 'active' | 'completed';
