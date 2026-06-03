@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useCart } from '@/context/cart';
 
 // 定義購買的商品項目的型別
 interface CartItem {
@@ -33,8 +34,9 @@ const initialItems: CartItem[] = [
 ];
 
 export default function CartPage() {
-  // TODO: 等context完成要從useCart匯入
-  const items = initialItems;
+  // 從自訂鉤子useCart中得到onAdd方法
+  const { items, totalQty, totalAmount, onDecrease, onIncrease, onRemove } =
+    useCart();
 
   return (
     <>
@@ -47,8 +49,7 @@ export default function CartPage() {
             {item.name} NT${item.price} (<b>{item.count}</b>)
             <button
               onClick={() => {
-                // TODO: 等context完成要從useCart匯入
-                // onIncrease(item.id);
+                onIncrease(item.id);
               }}
             >
               +
@@ -63,12 +64,10 @@ export default function CartPage() {
                   // 作法2: 再按下去會變為0，所以提示要作刪除
                   // 比較好的使用者體驗，刪除前要加確認視窗
                   if (confirm('你確定要移除這個商品嗎?')) {
-                    // TODO: 等context完成要從useCart匯入
-                    //  onRemove(item.id);
+                    onRemove(item.id);
                   }
                 } else {
-                  // TODO: 等context完成要從useCart匯入
-                  // onDecrease(item.id);
+                  onDecrease(item.id);
                 }
               }}
             >
@@ -78,8 +77,7 @@ export default function CartPage() {
               onClick={() => {
                 // 比較好的使用者體驗，刪除前要加確認視窗
                 if (confirm('你確定要移除這個商品嗎?')) {
-                  // TODO: 等context完成要從useCart匯入
-                  // onRemove(item.id);
+                  onRemove(item.id);
                 }
               }}
             >
@@ -90,10 +88,9 @@ export default function CartPage() {
       </ul>
       <hr />
       {/* 顯示總數量和總金額 */}
-      {/* TODO: 等context完成要從useCart匯入 */}
-      {/* <p>
+      <p>
         總數量: {totalQty} / 總金額: {totalAmount}
-      </p> */}
+      </p>
     </>
   );
 }

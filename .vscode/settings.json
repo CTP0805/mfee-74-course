@@ -66,6 +66,7 @@
     "**/dist": true
   },
   "typescript.preferences.includePackageJsonAutoImports": "auto",
+  "typescript.tsdk": "./node_modules/typescript/lib",
   "typescript.suggest.completeFunctionCalls": true,
   "typescript.preferences.quoteStyle": "single",
   "css.preferences.quoteStyle": "double",

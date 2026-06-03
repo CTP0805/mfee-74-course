@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useCart } from '@/context/cart';
 
 // 定義商品項目的型別
 interface ProductItem {
@@ -29,6 +30,9 @@ const products: ProductItem[] = [
 ];
 
 export default function ProductPage() {
+  // 從自訂鉤子useCart中得到onAdd方法
+  const { onAdd } = useCart();
+
   return (
     <>
       <h1>商品列表</h1>
@@ -41,8 +45,9 @@ export default function ProductPage() {
               {product.name}(NT${product.price})
               <button
                 onClick={() => {
-                  // TODO: 等context完成要從useCart匯入
-                  // onAdd(product);
+                  onAdd(product);
+                  // 跳出一個加入的提示
+                  alert(`${product.name}已成功加入購物車!`);
                 }}
               >
                 加入購物車
