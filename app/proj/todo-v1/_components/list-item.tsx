@@ -7,12 +7,14 @@ export interface ListItemProps {
   todo: Todo;
   onToggleCompleted: (id: string) => void;
   onRemove: (id: string) => void;
+  onEdit: (id: string) => void;
 }
 
 export default function ListItem({
   todo,
   onToggleCompleted,
   onRemove,
+  onEdit,
 }: ListItemProps) {
   return (
     <>
@@ -35,7 +37,13 @@ export default function ListItem({
           {todo.text}
         </span>
         {/* 進入編輯狀態 */}
-        <button>編輯</button>
+        <button
+          onClick={() => {
+            onEdit(todo.id);
+          }}
+        >
+          編輯
+        </button>
         <button
           onClick={() => {
             if (confirm('你確定要刪除這個項目？')) {

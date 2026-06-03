@@ -21,6 +21,7 @@ export default function ListEditForm({ todo }: ListEditFormProps) {
           setInputText(e.target.value);
         }}
       />
+      <button>儲存</button>
     </>
   );
 }
