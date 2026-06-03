@@ -68,6 +68,21 @@ export default function TodoPage() {
     setTodos(nextTodos);
   };
 
+  // 處理文件編輯後的修改
+  const onSave = (todoId: string, updatedText: string) => {
+    const nextTodos = todos.map((todo) => {
+      // 對符合條件的物件作修改
+      if (todo.id === todoId) {
+        // 更新修改文字+恢復未編輯前的狀態
+        return { ...todo, text: updatedText, isEditing: false };
+      } else {
+        return todo;
+      }
+    });
+    // 設定回狀態
+    setTodos(nextTodos);
+  };
+
   return (
     <>
       <h1>待辨事項</h1>
@@ -80,6 +95,7 @@ export default function TodoPage() {
         onRemove={onRemove}
         onToggleCompleted={onToggleCompleted}
         onEdit={onEdit}
+        onSave={onSave}
       />
     </>
   );

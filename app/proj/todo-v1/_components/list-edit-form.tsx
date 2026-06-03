@@ -6,9 +6,10 @@ import { Todo } from '../_types/todo';
 
 export interface ListEditFormProps {
   todo: Todo;
+  onSave: (id: string, updatedText: string) => void;
 }
 
-export default function ListEditForm({ todo }: ListEditFormProps) {
+export default function ListEditForm({ todo, onSave }: ListEditFormProps) {
   // 用目前的todo.text當初始值
   const [inputText, setInputText] = useState(todo.text);
 
@@ -21,7 +22,13 @@ export default function ListEditForm({ todo }: ListEditFormProps) {
           setInputText(e.target.value);
         }}
       />
-      <button>儲存</button>
+      <button
+        onClick={() => {
+          onSave(todo.id, inputText);
+        }}
+      >
+        儲存
+      </button>
     </>
   );
 }

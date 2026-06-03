@@ -11,6 +11,7 @@ export interface ListProps {
   onToggleCompleted: (id: string) => void;
   onRemove: (id: string) => void;
   onEdit: (id: string) => void;
+  onSave: (id: string, updatedText: string) => void;
 }
 
 export default function List({
@@ -18,13 +19,14 @@ export default function List({
   onToggleCompleted,
   onRemove,
   onEdit,
+  onSave,
 }: ListProps) {
   return (
     <>
       <ul>
         {todos.map((todo) => {
           return todo.isEditing ? (
-            <ListEditForm key={todo.id} todo={todo} />
+            <ListEditForm key={todo.id} todo={todo} onSave={onSave} />
           ) : (
             <ListItem
               key={todo.id}
