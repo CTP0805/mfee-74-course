@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { ThemeProvider } from '@/context/theme';
 
 export const metadata: Metadata = {
   title: 'React課堂範例',
@@ -13,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {/* 第3-2步: 最外層元件包裹Provider元件，提供Context給其下的後代元件 */}
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
