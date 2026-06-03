@@ -14,8 +14,9 @@ const initData = [
     id: 'u001',
     text: '繳電信費',
     completed: false, // 代表這個事項完成(true)，未完成(false)
+    isEditing: false,
   },
-  { id: 'u002', text: '寫作業', completed: true },
+  { id: 'u002', text: '寫作業', completed: true, isEditing: false },
 ];
 
 export default function TodoPage() {

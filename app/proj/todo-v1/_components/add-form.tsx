@@ -32,6 +32,7 @@ export default function AddForm({ onAdd }: AddFormProps) {
               id: crypto.randomUUID(), //新項目使用uuid當作id
               text: inputText,
               completed: false,
+              isEditing: false,
             };
 
             onAdd(newTodo);

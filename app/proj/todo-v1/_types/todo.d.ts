@@ -2,5 +2,6 @@
 export interface Todo {
   id: string; // uuid
   text: string;
-  completed: boolean;
+  completed: boolean; // true代表已完成
+  isEditing: boolean; // true代表正在編輯中
 }
