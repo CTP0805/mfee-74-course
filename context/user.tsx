@@ -40,6 +40,10 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
         email: 'abc@aa.com',
         password: '12345',
       });
+      alert('歡迎，你已登入');
+    } else {
+      // TODO: 這裡應該不要處理ui
+      alert('email或密碼錯誤!');
     }
   };
 

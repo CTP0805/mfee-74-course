@@ -1,13 +1,48 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useUser } from '@/context/user';
 
-export interface LoginPageProps {}
+export default function LoginPage() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-export default function LoginPage({}: LoginPageProps) {
+  // 使用context
+  const { isLoggedIn, login, logout } = useUser();
+
   return (
     <>
-      <div>Login Page</div>
+      <h1>會員登入</h1>
+      <hr />
+      <div>
+        Email
+        <input
+          type="text"
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+      </div>
+      <div>
+        密碼
+        <input
+          type="text"
+          value={password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+        />
+      </div>
+      <div>
+        <button
+          onClick={() => {
+            login(email, password);
+          }}
+        >
+          登入
+        </button>
+      </div>
     </>
   );
 }
