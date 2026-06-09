@@ -9,6 +9,9 @@ export default function UncontrolledPage() {
       <h1>不可控表單元件範例(uncontrolled)</h1>
       <hr />
       <MyInputId />
+      <MyInputId />
+      <hr />
+      <MyInputRefs />
       <MyInputRefs />
     </>
   );
