@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function PatternPage() {
   const [count, setCount] = useState(0);
@@ -29,9 +30,18 @@ export default function PatternPage() {
     );
   }, [count]); // 只有"狀態"或"屬性"(或兩者的一部份，或是計算衍生的變數)加到這個"相依變數陣列"才有作用
 
+  // 樣式3: 第一個傳入參數(函式)的回傳值也是一個函式，寫在其中。通常和樣式2(主要2-1)搭配。
+  // 意義: `willUnmount`(cleanup清理函式)
+  useEffect(() => {
+    return () => {
+      console.log('這個元件要`卸載``之前`執行我一次');
+    };
+  }, []);
+
   return (
     <>
       <h1>useEffect應用3+1種樣式</h1>
+      <Link href="/">連到首頁</Link>
       <hr />
       <h1>{count}</h1>
       <button
