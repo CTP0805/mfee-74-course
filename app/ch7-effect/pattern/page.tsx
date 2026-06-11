@@ -20,7 +20,7 @@ export default function PatternPage() {
   }, []); // 不與任何的相依變數關聯
 
   // derived state(衍生的狀態) 這種也能放在相依變數陣列中，和放count效果一樣
-  const doubleCount = count * 2;
+  // const doubleCount = count * 2;
 
   // 樣式2-2: 有第二個傳入參數(陣列)，但陣列裡有成員
   // 意義: `didMount`(first render)+`didUpdate`(re-render)時間點的類似生命周期方法
