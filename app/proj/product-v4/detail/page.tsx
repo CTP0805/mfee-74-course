@@ -29,7 +29,7 @@ export default function ProductPage() {
   const sp = useSearchParams();
   const id = sp.get('id');
   // 重複利用useFetch寫好的商業邏輯
-  const { data, loading, error } = useFetch<Product>(url + id, []);
+  const { data, loading, error } = useFetch<Product | null>(url + id, null);
   const product = data;
 
   if (loading) {

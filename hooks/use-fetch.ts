@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 export function useFetch<T>(
   url: string,
-  initValue?: T,
+  initValue: T,
   loaderMs: number = 1500, // 載入指示關閉時間ms，預設1500
   option?: RequestInit
 ) {
